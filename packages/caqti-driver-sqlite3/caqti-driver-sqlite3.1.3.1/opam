@@ -1,0 +1,28 @@
+opam-version: "2.0"
+maintainer: "Petter A. Urkedal <paurkedal@gmail.com>"
+authors: "Petter A. Urkedal <paurkedal@gmail.com>"
+license: "LGPL-3.0-or-later WITH OCaml-LGPL-linking-exception"
+homepage: "https://github.com/paurkedal/ocaml-caqti/"
+doc: "https://paurkedal.github.io/ocaml-caqti/index.html"
+bug-reports: "https://github.com/paurkedal/ocaml-caqti/issues"
+depends: [
+  "ocaml"
+  "caqti" {>= "1.3.0" & < "1.4.0~"}
+  "dune" {>= "1.11"}
+  "sqlite3"
+]
+build: [
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+]
+dev-repo: "git+https://github.com/paurkedal/ocaml-caqti.git"
+synopsis: "Sqlite3 driver for Caqti using C bindings"
+x-commit-hash: "43abfd004260e1cf199b0c7376b9a7d08f65087d"
+url {
+  src:
+    "https://github.com/paurkedal/ocaml-caqti/releases/download/v1.3.1/caqti-v1.3.1.tbz"
+  checksum: [
+    "sha256=16117e5766c991dc479f22ee8949dd5ed0702c08d0a8c6729768996ed8d9ea68"
+    "sha512=844245294bbe76cb548a1939975b5282225abc87c625c97c7c3846da83f700a1712711f92cf7708a6adf749061dd7776e90c1a81dcae2b396400ba0aca33a5bd"
+  ]
+}
